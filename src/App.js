@@ -33,6 +33,11 @@ const App = () => {
             : null;
         }
         return { ...state, todos };
+      case 'EDIT_TODO':
+        todos = state.todos;
+        idx = todos.map(x => x.id).indexOf(action.payload.id);
+        todos[idx] = action.payload;
+        return { ...state, todos };
       default:
         break;
     }

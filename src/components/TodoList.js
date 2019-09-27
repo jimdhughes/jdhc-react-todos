@@ -34,7 +34,13 @@ const TodoList = () => {
               variant="outlined"
             />
           </form>
-          <List>{todos.map(t => TodoItem(t))}</List>
+          <List>
+            {todos
+              .filter(t => !t.isDeleted)
+              .map(t => (
+                <TodoItem todo={t}></TodoItem>
+              ))}
+          </List>
         </CardContent>
       </Card>
     </React.Fragment>
