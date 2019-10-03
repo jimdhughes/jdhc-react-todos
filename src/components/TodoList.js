@@ -36,7 +36,7 @@ const TodoList = () => {
           </form>
           <List>
             {todos
-              .filter(t => !t.isDeleted)
+              .filter(t => !t.deletedAt)
               .map(t => (
                 <TodoItem todo={t}></TodoItem>
               ))}
